@@ -1,0 +1,3 @@
+git config user.name "Eric Fer e $*"
+git config user.email "dev@webcointernet.com"
+git config user.name

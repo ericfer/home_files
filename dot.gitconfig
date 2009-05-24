@@ -1,0 +1,23 @@
+[user]
+	name = Eric Fer
+	email = dev@webcointernet.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+[core]
+	excludesfile = /Users/ericfer/.gitignore
+	editor = mate -w
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ru = remote update
+	rpu = remote prune update
+[merge]
+	tool = opendiff
+
+[url "ssh://git@git.webcointernet.com/repos/"]
+	insteadOf = webco:
