@@ -1,0 +1,8 @@
+This repository intended to keep tracking of my Mac OS X environment
+
+In order to use it, follow the steps bellow:
+
+1) git clone git://github.com/ericfer/home_files.git ~/Sites/my/home_files
+2) cd ~/Sites/my/home_files
+3) ./install.sh
+4) restart your shell
