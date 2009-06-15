@@ -15,7 +15,7 @@ PATH=$PATH:/Applications/MAMP/Library/bin
 # MacPorts
 PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # Personal
-PATH=$PATH:~/bin
+PATH=$PATH:~/bin:~/webco
 
 
 ##########################
@@ -41,7 +41,9 @@ alias tm="rmate"
 alias sites="cd ~/Sites/"
 alias home="cd ~/"
 alias rubydir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8"
-alias mytmdir="cd ~/Library/Application Support/TextMate/Bundles"
+alias gemdir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/user-gems/1.8/gems/"
+alias hometmdir="cd ~/Library/Application\ Support/TextMate/Bundles/"
+alias tmdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
 
 ## GIT
 alias gco="git checkout"
@@ -50,14 +52,14 @@ alias ga="git add"
 alias gst="git status"
 alias gdiffg="git diff $1 $2 | mate"
 alias gba="git branch -a"
-alias gh="git push"
-alias gl="git pull"
+alias gh="git push; git status"
+alias gl="git pull; git status"
 alias glog="git log"
 alias glogo="git log --pretty=oneline"
 alias glogg="git log --graph"
-alias gpp="git pull; git push"
-alias gsu="git submodule update"
-alias gitclean='git remote prune origin && git remote update'
+alias gpp="git pull; git push; git status"
+alias gsu="git submodule update; git status"
+alias gitclean='git remote prune origin && git remote update; git status'
 alias gitk='gitk --all &'
 
 ## FILES

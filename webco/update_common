@@ -1,3 +1,0 @@
-git add vendor/plugins/blogblogs_common
-git commit -m "atualizacao blogblog_commons"
-git status

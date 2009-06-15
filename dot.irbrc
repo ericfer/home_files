@@ -1,7 +1,7 @@
 require "irb/completion"         # activate default completion
 require 'irb/ext/save-history'   # activate default history 
 require "tempfile"               # used for Vim integration 
-require '/Users/ericfer/irbrc_bbs' if File.exist?('/Users/ericfer/irbrc_bbs.rb')   # project utilities
+require '~/irbrc_bbs' if File.exist?('/Users/ericfer/webco/irbrc_bbs.rb')   # project utilities
 
 # save history using built-in options
 IRB.conf[:SAVE_HISTORY] = 1000
