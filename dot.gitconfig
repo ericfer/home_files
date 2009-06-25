@@ -1,6 +1,6 @@
 [user]
 	name = Eric Fer
-	email = dev@webcointernet.com
+	email = eric.fer@abril.com.br
 [color]
 	diff = auto
 	status = auto
@@ -21,3 +21,6 @@
 
 [url "ssh://git@git.webcointernet.com/repos/"]
 	insteadOf = webco:
+
+[url "ssh://eadrien@git.abril.com.br:5022/~/"]
+	insteadOf = abril:

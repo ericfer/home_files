@@ -1,8 +1,9 @@
 ##########################
 # SOURCES
 ##########################
-source ~/webco/dot.webcorc
-source ~/personal/dot.personalrc
+source ~/dot.webcorc
+source ~/dot.abrilrc
+source ~/dot.personalrc
 
 
 ##########################
@@ -15,7 +16,7 @@ PATH=$PATH:/Applications/MAMP/Library/bin
 # MacPorts
 PATH=$PATH:/opt/local/bin:/opt/local/sbin
 # Personal
-PATH=$PATH:~/bin:~/webco
+PATH=$PATH:~/bin
 
 
 ##########################
@@ -40,10 +41,12 @@ alias tm="rmate"
 ## PATHS
 alias sites="cd ~/Sites/"
 alias home="cd ~/"
+
 alias rubydir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8"
 alias gemdir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/user-gems/1.8/gems/"
-alias hometmdir="cd ~/Library/Application\ Support/TextMate/Bundles/"
+alias tmhomedir="cd ~/Library/Application\ Support/TextMate/Bundles/"
 alias tmdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
+alias startupdir="cd /Library/StartupItems/"
 
 ## GIT
 alias gco="git checkout"

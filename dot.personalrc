@@ -1,6 +1,3 @@
 ## PATHS
 alias homef="cd ~/Sites/my/home_files"
 alias shovell="cd ~/Sites/shovell"
-
-## PROJECTS
-alias tmmy="mate ~/Documents/MyInfo/"
