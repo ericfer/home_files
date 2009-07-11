@@ -1,7 +1,8 @@
 require "irb/completion"         # activate default completion
 require 'irb/ext/save-history'   # activate default history 
 require "tempfile"               # used for Vim integration 
-require '~/irbrc_bbs' if File.exist?('/Users/ericfer/webco/irbrc_bbs.rb')   # project utilities
+# require '~/.irbrc_bbs' if File.exist?('/Users/ericfer/.irbrc_bbs')   # project utilities
+# require '~/.irbrc_cms' #if File.exist?('/Users/ericfer/.irbrc_cms')   # project utilities
 
 # save history using built-in options
 IRB.conf[:SAVE_HISTORY] = 1000
@@ -55,4 +56,10 @@ rescue => e
   puts "Error on vim: #{e}"
 end  
 puts "Vim available."
+
+def load_factory
+  require 'faker'
+  require 'factory_girl'
+  Dir.glob('test/factories*.rb').each { |file| require file }
+end
 
