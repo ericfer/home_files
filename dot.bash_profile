@@ -76,6 +76,9 @@ alias du='du -h'
 alias ..="\cd .. ; ls"
 alias cd..="\cd .. ; ls"
 
+## RUBYGEMS
+alias geml="sudo gem list"  
+
 ## RAILS                 
 alias c="script/console"
 alias s="script/server --debugger"
