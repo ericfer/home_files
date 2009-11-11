@@ -1,9 +1,11 @@
 --- 
-:verbose: true
 :benchmark: false
-:sources: 
-- http://gems.rubyforge.org/
-- http://gems.github.com
 :update_sources: true
 :backtrace: false
 :bulk_threshold: 1000
+:verbose: true
+:sources: 
+- http://gemcutter.org
+- http://172.16.150.20/
+- http://gems.rubyforge.org/
+- http://gems.github.com/
