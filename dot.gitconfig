@@ -22,5 +22,5 @@
 [url "ssh://git@git.webcointernet.com/repos/"]
 	insteadOf = webco:
 
-[url "ssh://eadrien@git.abril.com.br:5022/~/"]
+[url "ssh://git@git.abril.com.br:5022/repos/"]
 	insteadOf = abril:
