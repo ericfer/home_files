@@ -1,7 +1,6 @@
 ##########################
 # PATH
 ##########################
-
 # Custom compilations
 PATH=/usr/local/bin:/usr/local/sbin:$PATH
 # Default path
@@ -13,21 +12,21 @@ MANPATH=/opt/local/share/man:$MANPATH
 PATH=/usr/local/mysql/bin:$PATH
 # MYSQL MAMP
 # PATH=$PATH:/Applications/MAMP/Library/bin
+PATH=$PATH:/usr/local/mongodb/bin
 
 
 ##########################
-# Environment settings
+# ENV SETTINGS
 ##########################
 export HISTCONTROL=erasedups
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="4;33"
 export CLICOLOR="auto"
-
+export EDITOR="mate"
 
 ##########################
 # ALIAS
 ##########################
-
 ## TOOLS
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias gvim="mvim"
@@ -37,9 +36,7 @@ alias mysqlstart="sudo /usr/local/mysql/bin/mysqld_safe"
 ## PATHS
 alias sites="cd ~/Sites/"
 alias home="cd ~/"
-
 alias rubydir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8"
-alias gemdir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/user-gems/1.8/gems/"
 alias tmdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
 alias tmhomedir="cd ~/Library/Application\ Support/TextMate/Bundles/"
 alias startupdir="cd /Library/StartupItems/"
@@ -59,6 +56,7 @@ alias glogg="git log --graph"
 alias gpp="git pull; git push; git status"
 alias gsu="git submodule update; git status"
 alias gitclean='git remote prune origin && git remote update; git status'
+alias gc=gitclean
 alias gitk='gitk --all &'
 
 ## FILES
@@ -71,17 +69,22 @@ alias ll='ls -Gplh'
 alias la='ls -Gplah'
 alias df='df -h'
 alias du='du -h'
+alias ag='alias | grep' 
+alias pg='ps -ef | grep'
+alias hosts='cat /etc/hosts'
+alias cat='cat -n'
 
 # NAVIGATION
 alias ..="\cd .. ; ls"
 alias cd..="\cd .. ; ls"
 
 ## RUBYGEMS
-alias geml="sudo gem list"  
+alias glg="sudo gem list | grep"  
 
 ## RAILS                 
 alias c="script/console"
 alias s="script/server --debugger"
+
 
 ##########################
 # FUNCTIONS
@@ -92,7 +95,7 @@ _rmate() {
 
 
 ##########################
-# GIT
+# GIT COMPLETION AND PROMPT
 ##########################
 source ~/.git-completion.sh
 PS1='\n[\u] \[\033[1;33m\]\w\a\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]")\n\$ '
@@ -105,8 +108,19 @@ complete -C ~/bin/rake_completion -o default rake
 
 
 ##########################
-# SOURCES
+# BASH COMPLETION
+##########################
+if [ -f /opt/local/etc/bash_completion ]; then
+    . /opt/local/etc/bash_completion
+fi
+
+##########################
+# SPECIALIZED  PROFILES
 ##########################
 source ~/.webcorc
 source ~/.abrilrc
 source ~/.personalrc
+
+
+# teste para passenger
+APXS2=/Applications/MAMP/Library/bin/apxs
