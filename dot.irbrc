@@ -1,10 +1,7 @@
 require "irb/completion"         # activate default completion
-require 'irb/ext/save-history'   # activate default history 
-require "tempfile"               # used for Vim integration 
-# require '~/.irbrc_bbs' if File.exist?('/Users/ericfer/.irbrc_bbs')   # project utilities
-# require '~/.irbrc_cms' #if File.exist?('/Users/ericfer/.irbrc_cms')   # project utilities
 
 # save history using built-in options
+require 'irb/ext/save-history'   # activate default history
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
 puts "History configured."
@@ -12,12 +9,6 @@ puts "History configured."
 # auto-indent
 IRB.conf[:AUTO_INDENT]=true
 puts "Auto-indent on."
-
-# Log to STDOUT if in Rails
-if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
-  require 'logger'
-  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-end
 
 # try to load rubygems
 begin
@@ -39,7 +30,15 @@ rescue LoadError => e
   puts "Seems you don't have Wirble installed: #{e}"
 end
 
+# Log to STDOUT if in Rails
+if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+  require 'logger'
+  RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
+  puts "Now logging to STDOUT."
+end
+
 # configure vim
+require "tempfile"   # used for Vim integration 
 @irb_temp_code = nil
 
 def vim(file=nil)
@@ -55,11 +54,8 @@ def vim(file=nil)
 rescue => e
   puts "Error on vim: #{e}"
 end  
-puts "Vim available."
 
-def load_factory
-  require 'faker'
-  require 'factory_girl'
-  Dir.glob('test/factories*.rb').each { |file| require file }
-end
+# Aliases
+alias q exit
 
+puts "\n*** IRB ready to rock !!! :P ***\n\n"
