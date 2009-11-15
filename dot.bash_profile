@@ -58,6 +58,7 @@ alias gsu="git submodule update; git status"
 alias gitclean='git remote prune origin && git remote update; git status'
 alias gc=gitclean
 alias gitk='gitk --all &'
+alias gb='git blame'
 
 ## FILES
 alias bp="mate ~/.bash_profile"
