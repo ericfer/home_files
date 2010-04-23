@@ -31,12 +31,14 @@ export EDITOR="mate"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias gvim="mvim"
 alias tm="_rmate"
-alias mysqlstart="sudo /usr/local/mysql/bin/mysqld_safe"
+alias mysqlstop="sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
+alias mysqlstart="sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
+alias apachestart="sudo apachectl start"
+alias apachestop="sudo apachectl stop"
 
 ## PATHS
 alias sites="cd ~/Sites/"
 alias home="cd ~/"
-alias rubydir="cd /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8"
 alias tmdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
 alias tmhomedir="cd ~/Library/Application\ Support/TextMate/Bundles/"
 alias startupdir="cd /Library/StartupItems/"
@@ -44,25 +46,23 @@ alias startupdir="cd /Library/StartupItems/"
 ## GIT
 alias gco="git checkout"
 alias gci="git commit -m"
-alias ga="git add"
 alias gst="git status"
 alias gdiffg="git diff $1 $2 | mate"
 alias gba="git branch -a"
+alias gbag="git branch -a | grep"
 alias gh="git push; git status"
 alias gl="git pull; git status"
 alias glog="git log"
 alias glogo="git log --pretty=oneline"
 alias glogg="git log --graph"
-alias gpp="git pull; git push; git status"
-alias gsu="git submodule update; git status"
 alias gitclean='git remote prune origin && git remote update; git status'
-alias gc=gitclean
 alias gitk='gitk --all &'
-alias gb='git blame'
 
 ## FILES
 alias bp="mate ~/.bash_profile"
 alias rbp="source ~/.bash_profile"
+alias sshconf="cat ~/.ssh/config"
+alias sshc='cat ~/.ssh/config'
 
 ## OS
 alias ls='ls -Gph'
@@ -71,16 +71,14 @@ alias la='ls -Gplah'
 alias df='df -h'
 alias du='du -h'
 alias ag='alias | grep' 
-alias pg='ps -ef | grep'
-alias hosts='cat /etc/hosts'
 alias cat='cat -n'
-
-# NAVIGATION
+alias psg='ps -ef | grep'
+alias hosts='cat /etc/hosts'
 alias ..="\cd .. ; ls"
 alias cd..="\cd .. ; ls"
 
 ## RUBYGEMS
-alias glg="sudo gem list | grep"  
+alias glg="gem list | grep"  
 
 ## RAILS                 
 alias c="script/console"
