@@ -1,8 +1,9 @@
-This repository intended to keep tracking of my Mac OS X environment
+This repository intendes to keep tracking of my Mac OS X environment
 
 In order to use it, follow the steps bellow:
 
-1) git clone git://github.com/ericfer/home_files.git ~/Sites/my/home_files
-2) cd ~/Sites/my/home_files
-3) ./install.sh
-4) restart your shell
+1) create a directory to download the files. Lets call it "<env_dir>"
+2) git clone git://github.com/ericfer/home_files.git <env_dir>
+3) cd <env_dir>
+4) ./install.sh
+5) restart your shell
