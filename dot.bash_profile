@@ -90,6 +90,21 @@ _rmate() {
   mate $(ls -1 | egrep -v "(log|git|public_stub|tmp|doc)" | egrep -v .DS_Store)
 }
 
+# newbranch <new_branch_name> <origin_to_new_branch>
+function newbranch() { 
+    [ -z "$1" ] && return
+    git push origin $2:refs/heads/$1
+    git checkout --track -b $1 origin/$1
+}
+
+# rmbranch <branch_name_to_delete>
+function rmbranch() {
+    [ -z "$1" ] && return
+    git checkout master
+    git branch -d $1
+    git push origin :refs/heads/$1
+}
+
 
 ##########################
 # LOADING SCRIPTS
