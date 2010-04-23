@@ -10,10 +10,8 @@ PATH=$PATH:/opt/local/bin:/opt/local/sbin
 MANPATH=/opt/local/share/man:$MANPATH
 # MySQL
 PATH=/usr/local/mysql/bin:$PATH
-# MYSQL MAMP
-# PATH=$PATH:/Applications/MAMP/Library/bin
+# MongoDB
 PATH=$PATH:/usr/local/mongodb/bin
-
 
 ##########################
 # ENV SETTINGS
