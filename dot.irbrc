@@ -1,21 +1,33 @@
 require "irb/completion"         # activate default completion
 
+COLORS = {
+  :default => "\033[0m",
+  :green   => "\033[0;32m",
+  :yellow  => "\033[0;33m",
+  :red     => "\033[0;31m",
+  :blue    => "\033[1;34m"
+}
+
+def puts_color(color, message)
+  puts "#{COLORS[color]}#{message}#{COLORS[:default]}"
+end
+
 # save history using built-in options
 require 'irb/ext/save-history'   # activate default history
 IRB.conf[:SAVE_HISTORY] = 1000
 IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
-puts "History configured."
+puts_color :green, "History configured"
 
 # auto-indent
 IRB.conf[:AUTO_INDENT]=true
-puts "Auto-indent on."
+puts_color :green, "Auto-indent on"
 
 # try to load rubygems
 begin
   require "rubygems"
-  puts "Rubygems loaded."
+  puts_color :green, "Rubygems loaded"
 rescue LoadError => e
-  puts "Seems you don't have Rubygems installed: #{e}"
+  puts_color :red, "Seems you don't have Rubygems installed: #{e}"
 end
 
 # let there be colors
@@ -25,16 +37,16 @@ begin
   require "wirble"
   Wirble.init(:skip_prompt=>true,:skip_history=>true)
   Wirble.colorize
-  puts "Wirble loaded. Now you have colors."
+  puts_color :green, "Wirble loaded - Now you have colors !!!"
 rescue LoadError => e
-  puts "Seems you don't have Wirble installed: #{e}"
+  puts_color :red, "Seems you don't have Wirble installed: #{e}"
 end
 
 # Log to STDOUT if in Rails
 if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
   require 'logger'
   RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
-  puts "Now logging to STDOUT."
+  puts_color :green, "Now logging to STDOUT"
 end
 
 # configure vim
@@ -47,15 +59,15 @@ def vim(file=nil)
   if(File.exists?(file) && File.size(file)>0)
     Object.class_eval(File.read(file))
     @irb_temp_code = file
-    "File loaded from Vim."
+    puts_color :green, "File loaded from Vim"
   else
-    "No file loaded."
+    puts_color :yellow, "No file loaded"
   end
 rescue => e
-  puts "Error on vim: #{e}"
+  puts_color :red, "Error on vim: #{e}"
 end  
 
 # Aliases
 alias q exit
 
-puts "\n*** IRB ready to rock !!! :P ***\n\n"
+puts_color :yellow, "\n*** IRB ready to rock !!! ***\n\n"
