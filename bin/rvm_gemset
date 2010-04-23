@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+# Script to show gemset in prompt of the shell (PS1)
+
+GEMSET_SEPARATOR = "%"
+
+gemsetdir = `echo $GEM_HOME`
+
+gemset = if offset = gemsetdir.index(GEMSET_SEPARATOR)
+  gemsetdir[offset + 1, gemsetdir.size - 1]
+else
+  ''
+end
+ 
+print gemset.chomp
