@@ -24,3 +24,5 @@
 
 [url "ssh://git@git.abril.com.br:5022/repos/"]
 	insteadOf = abril:
+[help]
+	autocorrect = 0
