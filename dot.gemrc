@@ -5,7 +5,5 @@
 :bulk_threshold: 1000
 :verbose: true
 :sources: 
-- http://gemcutter.org
-- http://172.16.150.20/
-- http://gems.rubyforge.org/
-- http://gems.github.com/
+- http://rubygems.org
+- http://gem.abrdigital.com.br
