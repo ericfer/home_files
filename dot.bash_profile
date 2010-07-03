@@ -76,6 +76,7 @@ alias psg='ps -ef | grep'
 alias hosts='cat /etc/hosts'
 alias ..="\cd .. ; ls"
 alias cd..="\cd .. ; ls"
+alias treesize="sudo du -sm * | sort -rn"
 
 ## RUBYGEMS
 alias glg="gem list | grep"  
