@@ -8,6 +8,8 @@ PATH=$PATH:/usr/bin:/usr/sbin:/bin:/sbin:/usr/X11/bin
 # MacPorts
 PATH=$PATH:/opt/local/bin:/opt/local/sbin
 MANPATH=/opt/local/share/man:$MANPATH
+# Git
+PATH=/usr/local/git/bin:$PATH
 # MySQL
 PATH=/usr/local/mysql/bin:$PATH
 # MongoDB
