@@ -94,14 +94,14 @@ _rmate() {
 }
 
 # newbranch <new_branch_name> <origin_to_new_branch>
-function newbranch() { 
+function create_branch() { 
     [ -z "$1" ] && return
     git push origin $2:refs/heads/$1
     git checkout --track -b $1 origin/$1
 }
 
 # rmbranch <branch_name_to_delete>
-function rmbranch() {
+function destroy_branch() {
     [ -z "$1" ] && return
     git checkout master
     git branch -d $1
