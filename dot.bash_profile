@@ -31,10 +31,10 @@ export EDITOR="mate"
 alias vim="/Applications/MacVim.app/Contents/MacOS/Vim"
 alias gvim="mvim"
 alias tm="_rmate"
-alias mysqlstop="sudo launchctl unload -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
-alias mysqlstart="sudo launchctl load -w /Library/LaunchDaemons/com.mysql.mysqld.plist"
-alias apachestart="sudo apachectl start"
-alias apachestop="sudo apachectl stop"
+alias mysqlstop="launchctl unload -w ~/Library/LaunchAgents/com.mysql.mysqld.plist"
+alias mysqlstart="launchctl load -w ~/Library/LaunchAgents/com.mysql.mysqld.plist" # same as: $ mysqld_safe
+alias mysqldaemon="/usr/local/Cellar/mysql/5.1.47/share/mysql/mysql.server" # ex: $ mysqldaemon start/stop
+alias apache="sudo apachectl" # ex: $ apache start/stop
 
 ## PATHS
 alias sites="cd ~/Sites/"
