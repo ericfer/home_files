@@ -108,6 +108,11 @@ function destroy_branch() {
     git push origin :refs/heads/$1
 }
 
+# checkout_branch <branch_name>
+function checkout_remote_branch() {
+  [ -z "$1" ] && return
+  git checkout --track -b $1 origin/$1
+}
 
 ##########################
 # LOADING SCRIPTS
