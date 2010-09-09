@@ -2,7 +2,7 @@
 
 # Script to show gemset in prompt of the shell (PS1)
 
-GEMSET_SEPARATOR = "%"
+GEMSET_SEPARATOR = "@"
 
 gemsetdir = `echo $GEM_HOME`
 
