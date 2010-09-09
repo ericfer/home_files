@@ -90,7 +90,7 @@ alias s="script/server --debugger"
 # FUNCTIONS
 ##########################
 _rmate() {
-  mate $(ls -1 | egrep -v "(log|git|public_stub|tmp|doc|coverage)" | egrep -v .DS_Store)
+  mate $(ls -1 | egrep -v "(log|git|public_stub|tmp|doc/|coverage)" | egrep -v .DS_Store)
 }
 
 # newbranch <new_branch_name> <origin_to_new_branch>
