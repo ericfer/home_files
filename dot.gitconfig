@@ -25,4 +25,6 @@
 [help]
   autocorrect = 0
 [push]
-   default = tracking
+  default = tracking
+[github]
+  user = ericfer
