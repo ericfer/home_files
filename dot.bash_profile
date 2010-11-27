@@ -93,17 +93,18 @@ _rmate() {
   mate $(ls -1 | egrep -v "(log|git|public_stub|tmp|doc/|coverage)" | egrep -v .DS_Store)
 }
 
-# newbranch <new_branch_name> <origin_to_new_branch>
+# create_branch <new_branch_name> <origin_to_new_branch>
 function create_branch() { 
     [ -z "$1" ] && return
+    [ -z "$2" ] && return # melhorar isso. Importante checar se tem o $2, pq se nao, isso se torna um 'delete branch'
     git push origin $2:refs/heads/$1
-    git checkout --track -b $1 origin/$1
+    git checkout --track -b $1 origin/$1 # chamar o checkout
 }
 
-# rmbranch <branch_name_to_delete>
+# destroy_branch <branch_name_to_delete>
 function destroy_branch() {
     [ -z "$1" ] && return
-    git checkout master
+    git checkout release_01
     git branch -d $1
     git push origin :refs/heads/$1
 }
@@ -119,10 +120,14 @@ function checkout_remote_branch() {
 ##########################
 
 # GIT COMPLETION
-source ~/.git-completion.sh
+if [ -f ~/.git-completion.sh ]; then
+  source ~/.git-completion.sh
+fi
 
 # RAKE COMPLETION
-complete -C ~/bin/rake_completion -o default rake
+if [ -f ~/bin/rake_completion ]; then
+  complete -C ~/bin/rake_completion -o default rake
+fi
 
 # BASH COMPLETION
 if [ -f /opt/local/etc/bash_completion ]; then
@@ -130,13 +135,15 @@ if [ -f /opt/local/etc/bash_completion ]; then
 fi
 
 # RVM
-if [[ -s "$HOME/.rvm/scripts/rvm" ]]; then 
-  source "$HOME/.rvm/scripts/rvm" 
+if [ -s ~/.rvm/scripts/rvm ]; then 
+  source ~/.rvm/scripts/rvm 
 fi
 
 # SPECIALIZED  PROFILE
-source ~/.privaterc
-  
+if [ -f ~/.privaterc ]; then
+  source ~/.privaterc
+fi
+
 
 ##########################
 # PROMPT
