@@ -24,6 +24,7 @@ export GREP_COLOR="4;33"
 export CLICOLOR="auto"
 export EDITOR="mate"
 
+
 ##########################
 # ALIAS
 ##########################
@@ -62,7 +63,6 @@ alias gitk='gitk --all &'
 alias bp="mate ~/.bash_profile"
 alias rbp="source ~/.bash_profile"
 alias sshconf="cat ~/.ssh/config"
-alias sshc='cat ~/.ssh/config'
 
 ## OS
 alias ls='ls -Gph'
@@ -82,7 +82,7 @@ alias treesize="sudo du -sm * | sort -rn"
 alias glg="gem list | grep"  
 
 ## RAILS                 
-alias c="script/console"
+alias c="script/console --debugger"
 alias s="script/server --debugger"
 
 
@@ -114,6 +114,7 @@ function checkout_remote_branch() {
   [ -z "$1" ] && return
   git checkout --track -b $1 origin/$1
 }
+
 
 ##########################
 # LOADING SCRIPTS
