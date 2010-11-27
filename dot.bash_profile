@@ -157,12 +157,8 @@ fi
 # Purple      0;35     Light Purple  1;35
 # Brown       0;33     Yellow        1;33
 # Light Gray  0;37     White         1;37
-PS1='\n[\u] \[\033[1;33m\]\w\a\[\033[0m\]$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]") \[\033[1;30m\][$(~/.rvm/bin/rvm-prompt v)@$(rvm_gemset)]\033[0m\]\n\$ '
-# PS1='\n[\u] ' # current user
-# PS1='$PS1\[\033[1;33m\]\w\a\[\033[0m\]' # current path
-# PS1='$PS1$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]") ' # git current path
-# PS1='$PS1\[\033[1;30m\]$(~/.rvm/bin/rvm-prompt i v)\033[0m\]' # rvm ruby version
-# PS1='$PS1\n\$ ' # prompt itself
-
-
-
+PS1='\n[\u] ' # current user
+PS1=$PS1'\[\033[1;33m\]\w\a\[\033[0m\]' # current path
+PS1=$PS1'$(__git_ps1 " \[\033[1;32m\](%s)\[\033[0m\]") ' # git current branch
+PS1=$PS1'\[\033[1;30m\][$(~/.rvm/bin/rvm-prompt v)$(rvm_gemset)]\033[0m\]' # rvm
+PS1=$PS1'\n\$ ' # linebreak
