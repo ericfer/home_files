@@ -40,8 +40,9 @@ alias apache="sudo apachectl" # ex: $ apache start/stop
 ## PATHS
 alias sites="cd ~/Sites/"
 alias home="cd ~/"
-alias tmdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
+alias tmappdir="cd /Applications/TextMate.app/Contents/SharedSupport/Bundles/"
 alias tmhomedir="cd ~/Library/Application\ Support/TextMate/Bundles/"
+alias tmlibdir="cd /Library/Application\ Support/TextMate/Bundles/"
 alias startupdir="cd /Library/StartupItems/"
 
 ## GIT
