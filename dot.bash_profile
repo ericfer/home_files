@@ -12,8 +12,8 @@ MANPATH=/opt/local/share/man:$MANPATH
 PATH=/usr/local/Cellar/git/1.7.3.1/bin:$PATH
 # MySQL
 PATH=/usr/local/mysql/bin:$PATH
-# MongoDB
-PATH=$PATH:/usr/local/mongodb/bin
+# Rhodes
+PATH=$PATH:/usr/local/android-sdk-mac_86/platform-tools:/usr/local/android-sdk-mac_86/tools
 
 ##########################
 # ENV SETTINGS
