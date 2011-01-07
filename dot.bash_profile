@@ -122,23 +122,31 @@ function checkout_remote_branch() {
 ##########################
 
 # GIT COMPLETION
-if [ -f ~/.git-completion.sh ]; then
-  source ~/.git-completion.sh
+GIT_COMPLETION_PATH=$HOME/.git-completion.sh
+if [ -f $GIT_COMPLETION_PATH ]
+  then source $GIT_COMPLETION_PATH
+  else echo "Bash profile error: missing $GIT_COMPLETION_PATH"  
 fi
 
 # RAKE COMPLETION
-if [ -f ~/bin/rake_completion ]; then
-  complete -C ~/bin/rake_completion -o default rake
+RAKE_COMPLETION_PATH=$HOME/bin/rake_completion
+if [ -f $RAKE_COMPLETION_PATH ]
+  then complete -C $RAKE_COMPLETION_PATH -o default rake
+  else echo "Bash profile error: missing $RAKE_COMPLETION_PATH"  
 fi
 
 # BASH COMPLETION
-if [ -f /opt/local/etc/bash_completion ]; then
-    . /opt/local/etc/bash_completion
+BASH_COMPLETION_PATH=/opt/local/etc/bash_completion
+if [ -f $BASH_COMPLETION_PATH ]
+  then . $BASH_COMPLETION_PATH
+  else echo "Bash profile error: missing $BASH_COMPLETION_PATH"
 fi
 
 # RVM
-if [ -s ~/.rvm/scripts/rvm ]; then 
-  source ~/.rvm/scripts/rvm 
+RVM_PATH=$HOME/.rvm/scripts/rvm
+if [ -s $RVM_PATH ]
+  then source $RVM_PATH
+  else echo "Bash profile error: missing $RVM_PATH"
 fi
 
 # SPECIALIZED  PROFILE
