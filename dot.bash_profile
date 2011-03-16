@@ -54,11 +54,13 @@ alias gba="git branch -a"
 alias gbag="git branch -a | grep"
 alias gh="git push; git status"
 alias gl="git pull; git status"
+alias glr="git pull --rebase; git status"
 alias glog="git log"
 alias glogo="git log --pretty=oneline"
 alias glogg="git log --graph"
 alias gitclean='git remote prune origin && git remote update; git status'
 alias gitk='gitk --all &'
+alias gf='git fetch'
 
 ## FILES
 alias bp="$EDITOR ~/.bash_profile"
@@ -76,7 +78,6 @@ alias cat='cat -n'
 alias psg='ps -ef | grep'
 alias hosts='cat /etc/hosts'
 alias ..="\cd .. ; ls"
-alias cd..="\cd .. ; ls"
 alias treesize="sudo du -sm * | sort -rn"
 
 ## RUBYGEMS
