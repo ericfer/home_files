@@ -22,7 +22,7 @@ export HISTCONTROL=erasedups
 export GREP_OPTIONS="--color=auto"
 export GREP_COLOR="4;33"
 export CLICOLOR="auto"
-export EDITOR="mate"
+export EDITOR="mate -w"
 
 
 ##########################
@@ -61,7 +61,7 @@ alias gitclean='git remote prune origin && git remote update; git status'
 alias gitk='gitk --all &'
 
 ## FILES
-alias bp="mate ~/.bash_profile"
+alias bp="$EDITOR ~/.bash_profile"
 alias rbp="source ~/.bash_profile"
 alias sshconf="cat ~/.ssh/config"
 
