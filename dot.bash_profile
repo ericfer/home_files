@@ -61,6 +61,7 @@ alias glogg="git log --graph"
 alias gitclean='git remote prune origin && git remote update; git status'
 alias gitk='gitk --all &'
 alias gf='git fetch'
+alias vai='glr && rake && git push'
 
 ## FILES
 alias bp="$EDITOR ~/.bash_profile"
